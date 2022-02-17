@@ -156,24 +156,6 @@ namespace MaquinaDoBanco.ConsoleApp
             Console.WriteLine("número da conta: " + entrada);
 
             Console.ReadKey();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
