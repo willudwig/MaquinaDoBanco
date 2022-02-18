@@ -69,111 +69,118 @@ namespace MaquinaDoBanco.ConsoleApp
             n0[1] = " __ ";
             n0[2] = "|  |";
             n0[3] = "|__|";
+            
+            char opcao = ' ';
 
-            Console.WriteLine("Tecle para gerar um número.");
-            Console.ReadKey();
-
-            Random aleatorio = new Random();
-
-            int entrada = aleatorio.Next(100000000,999999999);
-            string entr = entrada.ToString();
-            char[] numeroEntrada = entr.ToCharArray();
-
-            for (int i = 0; i < entr.Length; i++)
+            do
             {
-                switch (numeroEntrada[i])
+                Console.WriteLine("Tecle uma opção: \n\n'1'- Gerar Número: \n'2'- Sair");
+                opcao = Console.ReadKey().KeyChar;
+                Console.WriteLine("\n");
+
+                if (opcao == '1')
                 {
-                    case '0':
-                        linha1[i] = n0[1];
-                        linha2[i] = n0[2];
-                        linha3[i] = n0[3];
-                        break;
-                    case '1':
-                        linha1[i] = n1[1];
-                        linha2[i] = n1[2];
-                        linha3[i] = n1[3];
-                        break;
-                    case '2':
-                        linha1[i] = n2[1];
-                        linha2[i] = n2[2];
-                        linha3[i] = n2[3];
-                        break;
-                    case '3':
-                        linha1[i] = n3[1];
-                        linha2[i] = n3[2];
-                        linha3[i] = n3[3];
-                        break;
-                    case '4':
-                        linha1[i] = n4[1];
-                        linha2[i] = n4[2];
-                        linha3[i] = n4[3];
-                        break;
-                    case '5':
-                        linha1[i] = n5[1];
-                        linha2[i] = n5[2];
-                        linha3[i] = n5[3];
-                        break;
-                    case '6':
-                        linha1[i] = n6[1];
-                        linha2[i] = n6[2];
-                        linha3[i] = n6[3];
-                        break;
-                    case '7':
-                        linha1[i] = n7[1];
-                        linha2[i] = n7[2];
-                        linha3[i] = n7[3];
-                        break;
-                    case '8':
-                        linha1[i] = n8[1];
-                        linha2[i] = n8[2];
-                        linha3[i] = n8[3];
-                        break;
-                    case '9':
-                        linha1[i] = n9[1];
-                        linha2[i] = n9[2];
-                        linha3[i] = n9[3];
-                        break;
+
+                    Random aleatorio = new Random();
+
+                    int entrada = aleatorio.Next(100000000, 999999999);
+                    string entr = entrada.ToString();
+                    char[] numeroEntrada = entr.ToCharArray();
+
+                    for (int i = 0; i < entr.Length; i++)
+                    {
+                        switch (numeroEntrada[i])
+                        {
+                            case '0':
+                                linha1[i] = n0[1];
+                                linha2[i] = n0[2];
+                                linha3[i] = n0[3];
+                                break;
+                            case '1':
+                                linha1[i] = n1[1];
+                                linha2[i] = n1[2];
+                                linha3[i] = n1[3];
+                                break;
+                            case '2':
+                                linha1[i] = n2[1];
+                                linha2[i] = n2[2];
+                                linha3[i] = n2[3];
+                                break;
+                            case '3':
+                                linha1[i] = n3[1];
+                                linha2[i] = n3[2];
+                                linha3[i] = n3[3];
+                                break;
+                            case '4':
+                                linha1[i] = n4[1];
+                                linha2[i] = n4[2];
+                                linha3[i] = n4[3];
+                                break;
+                            case '5':
+                                linha1[i] = n5[1];
+                                linha2[i] = n5[2];
+                                linha3[i] = n5[3];
+                                break;
+                            case '6':
+                                linha1[i] = n6[1];
+                                linha2[i] = n6[2];
+                                linha3[i] = n6[3];
+                                break;
+                            case '7':
+                                linha1[i] = n7[1];
+                                linha2[i] = n7[2];
+                                linha3[i] = n7[3];
+                                break;
+                            case '8':
+                                linha1[i] = n8[1];
+                                linha2[i] = n8[2];
+                                linha3[i] = n8[3];
+                                break;
+                            case '9':
+                                linha1[i] = n9[1];
+                                linha2[i] = n9[2];
+                                linha3[i] = n9[3];
+                                break;
+                        }
+                    }
+                    foreach (string v in linha1)
+                    {
+                        Console.Write(v + " ");
+                    }
+                    Console.WriteLine();
+
+                    foreach (string v in linha2)
+                    {
+                        Console.Write(v + " ");
+                    }
+                    Console.WriteLine();
+
+                    foreach (string v in linha3)
+                    {
+                        Console.Write(v + " ");
+                    }
+                    Console.WriteLine("\n");
+
+                    Console.WriteLine("número da conta: " + entrada + "\n");
+
                 }
-            }
-            foreach (string v in linha1)
-            {
-                Console.Write(v + " ");
-            }
-            Console.WriteLine();
+                else if (opcao == '2')
+                {
+                    Console.Clear();
+                    Console.WriteLine("Encerrado!");
+                    break;
+                }
+                else if (opcao != '1' && opcao != '2')
+                {
+                    Console.WriteLine("\nOpção Inválida!\n\n");
+                    Console.WriteLine("Tecle uma opção: \n'1'- Gerar Número: \n'2'- Sair");
+                    opcao = Console.ReadKey().KeyChar;
+                    Console.WriteLine("\n");
+                }
 
-            foreach (string v in linha2)
-            {
-                Console.Write(v + " ");
-            }
-            Console.WriteLine();
-
-            foreach (string v in linha3)
-            {
-                Console.Write(v + " ");
-            }
-            Console.WriteLine("\n");
-
-            Console.WriteLine("número da conta: " + entrada);
+            } while (opcao != '2');
 
             Console.ReadKey();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
