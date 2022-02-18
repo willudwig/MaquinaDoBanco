@@ -80,7 +80,6 @@ namespace MaquinaDoBanco.ConsoleApp
 
                 if (opcao == '1')
                 {
-
                     Random aleatorio = new Random();
 
                     int entrada = aleatorio.Next(100000000, 999999999);
@@ -162,7 +161,6 @@ namespace MaquinaDoBanco.ConsoleApp
                     Console.WriteLine("\n");
 
                     Console.WriteLine("número da conta: " + entrada + "\n");
-
                 }
                 else if (opcao == '2')
                 {
